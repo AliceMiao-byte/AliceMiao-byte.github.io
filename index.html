@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>AliceMiao&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="AliceMiao&#39;s Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="AliceMiao&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="AliceMiao">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="AliceMiao's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AliceMiao&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Smart-Cat-Litter-Box2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/11/13/Smart-Cat-Litter-Box2/" class="article-date">
+  <time class="dt-published" datetime="2024-11-13T09:21:14.000Z" itemprop="datePublished">2024-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/11/13/Smart-Cat-Litter-Box2/">Smart Cat Litter Box</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2><span id="abstract">Abstract</span></h2><p>This paper presents an innovative smart litter box designed to automate the care process for cats, thereby enhancing both convenience for pet owners and health monitoring capabilities for their feline companions. Unlike traditional manual litter boxes, this advanced system utilizes a Raspberry Pi 4B as the main controller, equipped with a USB camera for identifying individual cats, and incorporates DC motors and servos for waste management. The system is capable of automatically detecting when a cat uses the litter box, recording the time and frequency of visits, and autonomously cleaning the waste. Moreover, the collected data can be utilized for health analysis, providing insights into the cat’s well-being that may otherwise go unnoticed. This abstract provides an overview of the hardware components, software implementation, and potential applications of the smart litter box in improving the quality of life for both pets and their human caretakers.</p>
+<h2><span id="1introduction">1.Introduction</span></h2><h3><span id="11-background">1.1 Background</span></h3><p>In recent years, there has been a significant increase in the adoption of pets, particularly cats, among urban households. As a result, the demand for efficient and convenient pet care solutions has risen correspondingly. Traditional litter boxes require regular maintenance, which can be a time-consuming task for busy pet owners. Furthermore, the inability to track individual cat behaviors often leads to unnoticed health issues, such as changes in urination or defecation patterns, which are critical indicators of feline health.</p>
+<p>Using an RGB camera as the primary sensor, in conjunction with a machine learning model to distinguish between various feline companions, empowering the system to discern the individual activities of multiple pets residing within the same domicile. This capability is pivotal for precise data acquisition, facilitating the monitoring of each cat’s movements without cross-contamination.</p>
+<p>The smart litter box utilizes DC motors and servo mechanisms for the automated disposal of waste, guaranteeing a meticulous and effortless cleaning process. Upon a cat’s departure from the litter box, the system initiates a cleaning cycle that meticulously sifts through the litter, segregating solid waste and clumped urine, and depositing them into a designated receptacle. This innovation significantly reduces the manual labor associated with cleaning and fosters a sanitary environment conducive to feline health.</p>
+<p>Beyond fundamental hygiene, the data amassed by the system provides insightful glimpses into the health status of each cat. By tracking the timing and frequency of litter box visits, the system can discern abnormalities that may signal underlying health concerns, such as urinary tract infections or renal issues. This proactive stance towards pet healthcare facilitates timely interventions, potentially enhancing the overall wellbeing and quality of life for the animals.</p>
+<p>The creation of this smart litter box was a collaborative endeavor, drawing upon the expertise of mechanical engineers, computer scientists, and veterinary professionals. The fusion of these disciplines has yielded a solution that streamlines daily pet care routines while also deepening our comprehension of feline behavior and health. Future endeavors will aim to broaden the system’s functionalities, incorporating additional health metrics and user-centric interfaces, transforming it into an indispensable asset for pet owners dedicated to providing optimal care for their cherished feline friends.</p>
+<h3><span id="12-project-aim">1.2 Project Aim</span></h3><p>This project aims to develop a smart litter box that integrates multiple automation and monitoring technologies to enhance pet care experiences and assist pet owners in better understanding their pets’ health conditions. The specific objectives are as follows:</p>
+<p><strong>1.2.1</strong>. Implement Automatic Sensing Functionality: Utilize built-in sensors to accurately detect the time points when a cat enters the litter box, ensuring the system can precisely capture each usage event.</p>
+<p><strong>1.2.2</strong>. Establish Behavior Tracking Mechanism: Record the specific times and frequencies of each cat’s use of the litter box in detail, providing data support for analyzing the pet’s daily behavior patterns.</p>
+<p><strong>1.2.3</strong>. Develop a Clean Management System: Design an efficient and hygienic waste management solution that automatically initiates the separation and transfer of waste to a dedicated collection bin after the cat has completed its visit, maintaining a clean and tidy environment within the litter box.</p>
+<p><strong>1.2.4</strong>. Construct a Health Management Platform: Store all data related to the cat’s visits to the litter box (including but not limited to visit times, frequencies, and identified color information) in a CSV format file, facilitating comprehensive health assessments by pet owners or veterinarians based on this information.</p>
+<p>In summary, this project is dedicated to optimizing the functionality and user experience of traditional litter boxes through technological innovation, while also introducing new pet health monitoring methods.</p>
+<h3><span id="13-significance-and-innovation">1.3 Significance and Innovation</span></h3><p><strong>1.3.1</strong> Significance</p>
+<ol>
+<li><p>Enhanced Pet Care Experience: By utilizing automation and intelligent technologies, this project significantly reduces the daily cleaning workload for pet owners, enhancing the convenience and efficiency of pet care.</p>
+</li>
+<li><p>Health Monitoring and Early Warning: Detailed recording and analysis of a cat’s toileting behavior can help pet owners detect abnormalities in a timely manner, enabling early identification of potential health issues and improving the pet’s quality of life.</p>
+</li>
+<li><p>Data-Driven Decision Making: The collected data provides valuable reference information for veterinarians, aiding in more accurate diagnosis and treatment. It also offers scientific care recommendations to pet owners.</p>
+</li>
+</ol>
+<p><strong>1.3.2</strong> Innovation Points</p>
+<ol>
+<li><p>Automatic Sensing and Tracking: Built-in sensors accurately detect when a cat enters the litter box and record each use’s specific time and frequency, enabling continuous monitoring of the pet’s behavior.</p>
+</li>
+<li><p>Automated Cleaning System: An efficient automatic cleaning mechanism is designed to separate and transfer waste from the litter box to a dedicated collection bin after the cat has finished, maintaining a hygienic environment.</p>
+</li>
+<li><p>Health Management Platform: All data related to the cat’s use of the litter box (including visit times, frequencies, and color information) is stored in a CSV file, facilitating data analysis by pet owners and veterinarians to support health assessments.</p>
+</li>
+<li><p>User-Friendly Design: The entire system is designed with user experience in mind, ensuring it is easy to operate and maintain, so that pet owners can use it effortlessly and benefit from its features.</p>
+</li>
+</ol>
+<h2><span id="2-system-implementation">2. System Implementation</span></h2><p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig1.png"></p>
+<p>Figure No.1 Overall flowchart </p>
+<h3><span id="21-structure-design-and-3d-printing">2.1 Structure Design and 3D Printing</span></h3><p>In designing the smart litter box, I used SolidWorks software by Dassault Systèmes to complete the structural design and then printed the components using a 3D printer. The main parts designed include the litter box container, the brush for cleaning cat waste, the servo motor mount, the waste collection bin, the stairs, and the outer shell of the entire litter box. To increase the stability of the structure, reinforcing ribs were added where necessary.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig2.png"></p>
+<p>Figure No.2 Smart cat litter box full view</p>
+<p><strong>2.1.1</strong> Cat Waste Container</p>
+<p>The cat waste container is designed to hold the cat litter, allowing the cat to use it for toileting. When the cat needs to use it, he&#x2F;she enters the container through the entrance.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig3.png"></p>
+<p>Figure No.3 Cat Waste Container</p>
+<p><strong>2.1.2</strong> Brush </p>
+<p>The brush is used to sweep cat waste from the waste container into the waste collection bin. After the cat finishes using the litter box and the waste solidifies, the brush moves from one end of the waste container to the other, driven by a lead screw DC motor. Subsequently, under the precise control of the servo motor, the brush rotates at a specific angle to sweep the waste from the container into the waste collection bin.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig4.png"></p>
+<p>Figure No.4 Brush</p>
+<p><strong>2.1.3</strong> Servo Motor Mount</p>
+<p>The servo motor mount is used to secure the servo motor to the lead screw DC motor. The servo motor is installed on the servo motor mount, and when the lead screw DC motor rotates, it drives the servo motor mount (along with the servo motor) in linear motion along the lead screw.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig5.png"></p>
+<p>Figure No.5 Servo Motor Mount</p>
+<p><strong>2.1.4</strong> the Waste Collection Bin</p>
+<p>The cat waste collection bin is used to collect the waste transferred from the waste container. Pet owners only need to periodically clean the waste collected in the bin.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig6.png"></p>
+<p>Figure No.6 the Waste Collection Bin</p>
+<p><strong>2.1.5</strong> Stairs</p>
+<p>The stairs provide a passage for the cat to enter the litter box and use it for toileting.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig7.png"></p>
+<p>Figure No.7 Stairs</p>
+<h3><span id="22-hardware">2.2 Hardware</span></h3><p><strong>2.2.1</strong> Raspberry Pi 4B</p>
+<p>The selection of the Raspberry Pi 4B as the master control unit for the smart litter box was driven by several key considerations, primarily revolving around its cost-effectiveness and robust computational capabilities suitable for real-time image processing tasks.</p>
+<p>Firstly, the Raspberry Pi 4B offers an excellent balance between affordability and performance, making it an ideal choice for projects that aim to deliver sophisticated functionality without incurring high development costs. Its relatively low price point ensures that the end product remains accessible to a broad range of consumers, promoting wider adoption and utilization of advanced pet care technologies.</p>
+<p>Secondly, the Raspberry Pi 4B is equipped with a powerful quad-core processor, which is more than capable of handling the computational demands associated with computer vision tasks. The ability to process images in real-time is crucial for the smart litter box, as it must accurately identify individual cats and monitor their usage patterns. This real-time capability is essential for providing immediate feedback and ensuring that the system can react promptly to the actions of the cats, thus maintaining a clean and hygienic environment.</p>
+<p>Moreover, the Raspberry Pi 4B supports a wide array of connectivity options, including Wi-Fi and Bluetooth, facilitating seamless integration with other smart home devices and enabling remote access to the system. This connectivity is vital for transmitting data to a central server or mobile application, where users can monitor their pet’s health status and receive alerts regarding any irregularities.</p>
+<p>Additionally, the extensive community support and availability of pre-built libraries for the Raspberry Pi make it easier to implement complex functionalities, such as machine learning algorithms, without requiring deep expertise in embedded systems programming. This factor significantly reduces the development time and complexity of the project, allowing for a quicker transition from prototype to market-ready product.</p>
+<p>In summary, the Raspberry Pi 4B was chosen as the master control module due to its optimal combination of affordability, computational power, connectivity features, and ease of development. These attributes collectively contribute to a highly functional and economically viable smart litter box solution that enhances the lives of both pets and their owners.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig8.png"></p>
+<p>Figure No.8 Overview of Rasp Pi 4B</p>
+<p><strong>2.2.2</strong> relay module</p>
+<p>To achieve the reciprocating motion of the DC motors, a 4-channel relay module is used. The motors’ forward and reverse rotations are controlled through a cleverly designed circuit wiring. This setup not only simplifies the circuit structure but also enhances the system’s reliability and stability.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig9.png"></p>
+<p>Figure No.9 Relay module</p>
+<p><strong>2.2.3</strong> Servo Motor</p>
+<p>Each end of the comb is connected to a servo motor. As the brush moves from one end to the other, the servo motors rotate 76 degrees, which helps to thoroughly remove the cat waste from the litter box.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig10.png"></p>
+<p>Figure No.10 Servo Motor</p>
+<p><strong>2.2.4</strong> Lead Screw DC Motor</p>
+<p>The system utilizes two lead screw DC motors to control the reciprocating motion of the comb within the litter box. This design ensures smooth and precise movement of the brush, effectively cleaning the litter box. </p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig11.png"></p>
+<p>Figure No.11 Lead Screw DC Motor</p>
+<p><strong>2.2.5</strong> USB Camera</p>
+<p>The project utilizes a 720p, 28mm focal length, 58-degree field of view USB camera that requires no drivers. This camera offers the following advantages:</p>
+<p><strong>High Definition</strong>: The 720p resolution ensures clear and detailed images.</p>
+<p><strong>Wide Field of View</strong>: A 58-degree field of view provides a broad visual range.</p>
+<p><strong>No Distortion</strong>: The lens design ensures that images are free from distortion, enhancing detection accuracy.</p>
+<p><strong>Affordable</strong>: The camera is cost-effective and budget-friendly.</p>
+<p><strong>Driver-Free</strong>: Plug-and-play functionality eliminates the need for additional driver installations, making it very convenient to use.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig12.png"></p>
+<p>Figure No.12 USB Camera</p>
+<h3><span id="23-main-circuit">2.3 Main Circuit</span></h3><p><strong>2.3.1</strong> Brush Reciprocating Motion Control Circuit </p>
+<p>To control the forward and reverse motion of a DC motor, two relays are used. The normally open (NO) terminals of both Relay 1 and Relay 2 are connected to VCC (+12V), while their normally closed (NC) terminals are connected to GND. The power leads of the DC motor are connected to the common (COM) terminals of the two relays.</p>
+<p><strong>Forward Motion</strong>: To make the motor rotate in the forward direction, set a high signal (logic high) to the control terminal of Relay 1 and a low signal (logic low) to the control terminal of Relay 2.</p>
+<p><strong>Reverse Motion</strong>: To make the motor rotate in the reverse direction, set a low signal (logic low) to the control terminal of Relay 1 and a high signal (logic high) to the control terminal of Relay 2.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig13.png"></p>
+<p>Figure No.13 Brush Reciprocating Motion Control Circuit</p>
+<p><strong>2.3.2</strong> Servo Motor Rotation Control Circuit</p>
+<p>Compared to regular servos, serial bus servos have three significant advantages: Firstly, they offer higher control precision, meaning they can reach the desired position more accurately; secondly, serial bus servos use high-speed communication protocols, allowing for faster data transmission and quicker response to commands; finally, multiple servos can be connected through a simple line, without having to wire each servo separately, which not only reduces the complexity of wiring but also makes the system look neater.</p>
+<p><img src="/2024/11/13/Smart-Cat-Litter-Box2/fig14.png"></p>
+<p>Figure No.14 Servo Motor Rotation Control Circuit</p>
+<h3><span id="24-program">2.4 Program</span></h3><p><strong>2.4.1</strong> Cat Detection and Recording</p>
+<p>Cat detection is performed using the OpenCV classifier haarcascade_frontalcatface.xml. A USB camera connected to a Raspberry Pi is used to capture and process the video stream in real-time. When a cat is detected, the system analyzes the pixel values of the cat’s face region. If the average pixel value of this region is below a predefined threshold, the cat is classified as black; otherwise, it is classified as white. The system also records the number of times the cat appears, its color, and the time of each appearance.</p>
+<p><strong>2.4.2</strong> Litter Box Cleaning Process</p>
+<p>After the cat has finished using the litter box, the system initiates an automatic cleaning process. First, a lead screw DC motor moves the brush from one end of the litter box to the other. Then, a servo motor rotates by a fixed angle to push the waste from the litter box into the waste collection bin. Once this action is completed, the servo motor resets to its original position. The system uses serial bus servos, which simplify the programming. When the cat uses the litter box again, the lead screw DC motor reverses direction, and the servo motor rotates in the opposite direction by the same angle.</p>
+<h2><span id="3-prototype-testing-and-results">3. Prototype Testing and Results</span></h2><p>To test the reliability of the smart litter box, I conducted multiple tests using a white cat and a black cat. After several rounds of testing, the system was able to detect the cats’ presence in real-time and successfully clean the waste from the litter box into the waste collection bin after the cats had finished and the waste had solidified.</p>
+<p>The test results are shown below:</p>
+<p>Table No.1 Test Results</p>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Date</th>
+<th>Color</th>
+<th>Appearance Time</th>
+<th>Detecting Success</th>
+<th>Toileting Time</th>
+<th>Cleaning Time</th>
+<th>Cleaning success</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2024-8-9</td>
+<td>White</td>
+<td>10:10:35</td>
+<td>Yes</td>
+<td>10:10:45</td>
+<td>10:28:45</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2024-8-9</td>
+<td>Black</td>
+<td>10:32:46</td>
+<td>Yes</td>
+<td>10:32:56</td>
+<td>10:50:56</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2024-8-9</td>
+<td>White</td>
+<td>10:15:36</td>
+<td>Yes</td>
+<td>10:15:46</td>
+<td>10:33:46</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2024-8-10</td>
+<td>Black</td>
+<td>10:09:17</td>
+<td>Yes</td>
+<td>10:09:27</td>
+<td>10:27:27</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2024-8-10</td>
+<td>Black</td>
+<td>10:08:18</td>
+<td>No</td>
+<td></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2024-8-10</td>
+<td>Black</td>
+<td>10:06:10</td>
+<td>Yes</td>
+<td>10:06:20</td>
+<td>10:24:20</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2024-8-11</td>
+<td>White</td>
+<td>10:12:24</td>
+<td>Yes</td>
+<td>10:12:24</td>
+<td>10:30:24</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2024-8-11</td>
+<td>White</td>
+<td>10:07:40</td>
+<td>Yes</td>
+<td>10:07:50</td>
+<td>10:25:50</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2024-8-12</td>
+<td>Black</td>
+<td>10:16:25</td>
+<td>Yes</td>
+<td>10:16:35</td>
+<td>10:34:35</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2024-8-12</td>
+<td>Black</td>
+<td>10:18:31</td>
+<td>Yes</td>
+<td>10:18:41</td>
+<td>10:36:41</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<p>After testing, the smart litter box correctly identifies the cat and automatically completes the waste cleaning process with a 90% success rate. I am quite satisfied with this test result. To further enhance the intelligence of the litter box, we can optimize it in the following two areas:</p>
+<ol>
+<li><p><strong>Adopting a More Efficient Cat Detection Algorithm</strong>: By using a cat detection algorithm with higher efficiency and accuracy, we can improve the overall performance of the system.</p>
+</li>
+<li><p><strong>Optimizing the Automatic Cleaning Program</strong>: Even if the cat is not detected during defecation, the system should periodically perform automatic cleaning actions. The specific logic for this needs further discussion and refinement.</p>
+</li>
+</ol>
+<h2><span id="4-conclusion">4. Conclusion</span></h2><p>This Smart Litter Box is capable of autonomously tracking the entire process of a cat utilizing the litter box. Equipped with an OpenCV classifier and a USB camera, it meticulously logs the cat’s arrival time, frequency of visits, and coat color in real-time, seamlessly storing this vital information in a CSV file for comprehensive health monitoring purposes.</p>
+<p>Powered by a lead screw DC motor, the system meticulously controls the reciprocal movement of the brush, synergizing with a servo motor that rotates at a precise angle to automate the waste cleaning process and seamlessly transfer it to the waste collection bin. This innovative design not only alleviates the burden of manual cleaning for pet owners but also facilitates the prompt identification of potential health concerns through data logging. Furthermore, it upholds household hygiene, elevates the convenience of pet care, and enhances the overall quality of life for cats.</p>
+<h2><span id="5-reference">5. Reference</span></h2><ol>
+<li><p>Real-Time Animal Detection and Tracking Using OpenCV and Deep Learning Raspberry Pi in Automation Systems. S. M. Masum Bhuiyan, Md. Hasanul Kabir, et al. 2019 International Conference on Electrical, Computer and Communication Engineering (ECCE).</p>
+</li>
+<li><p>Real-Time Object Detection and Tracking Using OpenCV and Python. S. M. Masum Bhuiyan, Md. Hasanul Kabir, et al. 2019 International Conference on Electrical, Computer and Communication Engineering (ECCE).</p>
+</li>
+<li><p>Control of DC Motors: A Review. S. K. Saha, S. P. Das, and R. K. Nema. IEEE Transactions on Industrial Electronics, 2013.</p>
+</li>
+<li><p>Control of Servo Motors: A Comprehensive Review. J. R. Lucas, M. A. El-Sharkawi, and R. J. Marks II. IEEE Transactions on Industrial Electronics, 2001</p>
+</li>
+<li><p>Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library. Adrian Kaehler and Gary Bradski. O’Reilly Media, 2016. </p>
+</li>
+<li><p>SolidWorks Corporation. (2020). SolidWorks 2020 Design Handbook. SolidWorks Press.</p>
+</li>
+<li><p>Kalpakjian, S., &amp; Schmid, S. R. (2018). Manufacturing Engineering and Technology. Pearson.</p>
+</li>
+<li><p>Cao, Y., &amp; Li, Z. (2019). Optimization of 3D Printing Parameters for PLA Filament. Procedia Manufacturing, 33, 128-133.</p>
+</li>
+<li><p>Erb, C., &amp; Lechler, T. (2015). 3D Printing Materials Handbook. Rapid Prototyping Journal, 21(6), 725-737.</p>
+</li>
+</ol>
+<h2><span id="6-supplement-information">6. Supplement Information</span></h2><p><strong>Main Code</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">public_path = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + <span class="string">&quot;/../public&quot;</span>)</span><br><span class="line">sys.path.append(public_path)</span><br><span class="line"><span class="keyword">from</span> librockmong <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> usb_device <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> gpio <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> motor_control <span class="keyword">import</span> send_command</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load cat face detector</span></span><br><span class="line">catPath = <span class="string">&quot;/usr/share/opencv4/haarcascades/haarcascade_frontalcatface.xml&quot;</span></span><br><span class="line">faceCascade = cv2.CascadeClassifier(catPath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize video capture device</span></span><br><span class="line">video_capture = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Preset threshold, assuming 127 is the threshold for distinguishing black and white</span></span><br><span class="line">threshold = <span class="number">110</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create CSV file for recording</span></span><br><span class="line">current_date = datetime.datetime.now().strftime(<span class="string">&quot;%Y%m%d&quot;</span>)</span><br><span class="line">csv_filename = <span class="string">f&#x27;cat_record_<span class="subst">&#123;current_date&#125;</span>.csv&#x27;</span></span><br><span class="line">csv_file = <span class="built_in">open</span>(csv_filename, mode=<span class="string">&#x27;w&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">fieldnames = [<span class="string">&#x27;Time&#x27;</span>, <span class="string">&#x27;Color&#x27;</span>, <span class="string">&#x27;Count&#x27;</span>]</span><br><span class="line">writer = csv.DictWriter(csv_file, fieldnames=fieldnames)</span><br><span class="line">writer.writeheader()</span><br><span class="line"></span><br><span class="line"><span class="comment"># clear_cnt</span></span><br><span class="line">clear_cnt = <span class="number">0</span></span><br><span class="line"><span class="comment"># Initialize counter</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Time of the most recent cat face detection</span></span><br><span class="line">last_detected_time = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define minimum time interval between detections (seconds)</span></span><br><span class="line">min_time_between_detections = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define command and serial port parameters</span></span><br><span class="line">command = [<span class="number">0x55</span>, <span class="number">0x55</span>, <span class="number">0x0B</span>, <span class="number">0x03</span>, <span class="number">0x02</span>, <span class="number">0xE8</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x38</span>, <span class="number">0x81</span>, <span class="number">0x02</span>, <span class="number">0x38</span>, <span class="number">0x81</span>]</span><br><span class="line">cmd_reset = [<span class="number">0x55</span>, <span class="number">0x55</span>, <span class="number">0x0B</span>, <span class="number">0x03</span>, <span class="number">0x02</span>, <span class="number">0xE8</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x02</span>, <span class="number">0x00</span>, <span class="number">0x00</span>]</span><br><span class="line">port = <span class="string">&#x27;/dev/ttyUSB0&#x27;</span></span><br><span class="line">baudrate = <span class="number">9600</span>  <span class="comment"># Adjust according to actual baud rate</span></span><br><span class="line"></span><br><span class="line">SerialNumbers = (c_int * <span class="number">20</span>)()</span><br><span class="line">sn = <span class="number">0</span></span><br><span class="line"><span class="comment"># Scan device</span></span><br><span class="line">ret = UsbDevice_Scan(byref(SerialNumbers))</span><br><span class="line"><span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Error: %d&quot;</span>%ret)</span><br><span class="line">    exit()</span><br><span class="line"><span class="keyword">elif</span>(ret == <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No device!&quot;</span>)</span><br><span class="line">    exit()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(ret):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Dev%d SN: %d&quot;</span>%(i, SerialNumbers[i]))</span><br><span class="line"></span><br><span class="line">sn = SerialNumbers[<span class="number">0</span>]  <span class="comment"># Select device 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize P0 as output mode</span></span><br><span class="line">ret = IO_InitPin(sn, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;error: %d&quot;</span>%ret)</span><br><span class="line">    <span class="comment"># Initialize P1 as output mode</span></span><br><span class="line">ret = IO_InitPin(sn, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;error: %d&quot;</span>%ret)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define timer thread</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TimerThread</span>(threading.Thread):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, duration, callback</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="variable language_">self</span>.duration = duration</span><br><span class="line">        <span class="variable language_">self</span>.callback = callback</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        time.sleep(<span class="variable language_">self</span>.duration)</span><br><span class="line">        <span class="variable language_">self</span>.callback()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to execute when timer finishes</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">on_timer_finished</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Excrement has solidified&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> clear_cnt%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="comment"># Control P0 output low level</span></span><br><span class="line">        ret = IO_WritePin(sn, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;error: %d&quot;</span>%ret)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Control P1 output high level</span></span><br><span class="line">        ret = IO_WritePin(sn, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;error: %d&quot;</span>%ret)</span><br><span class="line">        sleep(<span class="number">5</span>)</span><br><span class="line">        ret = IO_WritePin(sn, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        send_command(port, baudrate, command)</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># reset</span></span><br><span class="line">        send_command(port, baudrate, cmd_reset)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># Control P0 output low level</span></span><br><span class="line">        ret = IO_WritePin(sn, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;error: %d&quot;</span>%ret)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Control P1 output high level</span></span><br><span class="line">        ret = IO_WritePin(sn, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">0</span> &gt; ret):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;error: %d&quot;</span>%ret)</span><br><span class="line">        sleep(<span class="number">5</span>)</span><br><span class="line">        ret = IO_WritePin(sn, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        send_command(port, baudrate, command)</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># reset</span></span><br><span class="line">        send_command(port, baudrate, cmd_reset)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment"># Read camera frame</span></span><br><span class="line">    ret, frame = video_capture.read()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># If unable to get frame, exit loop</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Convert to grayscale</span></span><br><span class="line">    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Cat face detection</span></span><br><span class="line">    faces = faceCascade.detectMultiScale(</span><br><span class="line">        gray,</span><br><span class="line">        scaleFactor=<span class="number">1.02</span>,</span><br><span class="line">        minNeighbors=<span class="number">3</span>,</span><br><span class="line">        minSize=(<span class="number">150</span>, <span class="number">150</span>),</span><br><span class="line">        flags=cv2.CASCADE_SCALE_IMAGE</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Frame cat faces and determine color based on grayscale value</span></span><br><span class="line">    <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</span><br><span class="line">        <span class="comment"># Get current time</span></span><br><span class="line">        current_time = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Check if enough time has passed to consider this a new cat face appearance</span></span><br><span class="line">        <span class="keyword">if</span> last_detected_time <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> (current_time - last_detected_time).total_seconds() &gt;= min_time_between_detections:</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">            last_detected_time = current_time</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Extract grayscale image of cat face region</span></span><br><span class="line">            cat_face_gray = gray[y:y+h, x:x+w]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Calculate average grayscale value of cat face region</span></span><br><span class="line">            avg_brightness = cv2.mean(cat_face_gray)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Determine cat color based on average grayscale value</span></span><br><span class="line">            <span class="keyword">if</span> avg_brightness &gt; threshold:</span><br><span class="line">                color_label = <span class="string">&#x27;White&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                color_label = <span class="string">&#x27;Black&#x27;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># Draw rectangle around cat face and label color on original image</span></span><br><span class="line">            cv2.rectangle(frame, (x, y), (x+w, y+h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">            cv2.putText(frame, <span class="string">f&#x27;<span class="subst">&#123;color_label&#125;</span> Cat&#x27;</span>, (x, y-<span class="number">7</span>), cv2.FONT_HERSHEY_SIMPLEX, <span class="number">1.2</span>, (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>, cv2.LINE_AA)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Write to CSV file</span></span><br><span class="line">            writer.writerow(&#123;<span class="string">&#x27;Time&#x27;</span>: current_time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>), <span class="string">&#x27;Color&#x27;</span>: color_label, <span class="string">&#x27;Count&#x27;</span>: count&#125;)</span><br><span class="line"></span><br><span class="line">            clear_cnt += <span class="number">1</span></span><br><span class="line">            <span class="comment"># If timer thread hasn&#x27;t started, start it</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(on_timer_finished, <span class="string">&#x27;timer_thread&#x27;</span>) <span class="keyword">or</span> <span class="keyword">not</span> on_timer_finished.timer_thread.is_alive():</span><br><span class="line">                on_timer_finished.timer_thread = TimerThread(<span class="number">10</span>, on_timer_finished)</span><br><span class="line">                on_timer_finished.timer_thread.start()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Display image</span></span><br><span class="line">    cv2.imshow(<span class="string">&#x27;Video&#x27;</span>, frame)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># If &#x27;q&#x27; key is pressed, exit loop</span></span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Cleanup</span></span><br><span class="line">video_capture.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">csv_file.close()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/11/13/Smart-Cat-Litter-Box2/" data-id="cm3h0gv990000k8s4elba704n" data-title="Smart Cat Litter Box" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/11/13/Smart-Cat-Litter-Box2/">Smart Cat Litter Box</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 AliceMiao<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
